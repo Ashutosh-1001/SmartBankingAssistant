@@ -1,4 +1,3 @@
-# src/faker_data.py
 from faker import Faker
 import random
 import json
@@ -7,7 +6,6 @@ from datetime import datetime, timedelta
 fake = Faker()
 
 def generate_customer():
-    created = fake.date_between(start_date='-3y', end_date='today')
     total_tx = random.randint(30, 2000)
     deposits = round(random.uniform(1000, 75000), 2)
     withdrawals = round(random.uniform(500, 60000), 2)
@@ -39,7 +37,6 @@ def generate_customer():
         "AccountStatus": random.choice(["Active", "Dormant", "Closed"]),
         "RiskProfile": random.choice(["Low", "Medium", "High"]),
         "DepositStatus": random.choice(["Yes", "No"]),
-        "CreatedAt": created.isoformat()
     }
 
 def generate_product(pid):
